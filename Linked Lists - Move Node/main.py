@@ -9,6 +9,7 @@ class Context(object):
         self.dest = dest
     
 def move_node(source, dest):
+    if source is None: raise ValueError
     new_source = source.next
     source.next = dest
     return Context(new_source, source)
